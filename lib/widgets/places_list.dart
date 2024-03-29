@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class PlacesList extends StatelessWidget {
   const PlacesList({super.key, required this.places});
-
   final List<Place> places;
 
   @override
@@ -24,8 +23,14 @@ class PlacesList extends StatelessWidget {
         itemCount: places.length,
         itemBuilder: (ctx, index) => ListTile(
               leading: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.onBackground,
                 radius: 26,
-                backgroundImage: FileImage(places[index].image),
+                child: CircleAvatar(
+                  radius: 24,
+                  backgroundImage: FileImage(
+                    places[index].image,
+                  ),
+                ),
               ),
               title: Text(
                 places[index].title,
