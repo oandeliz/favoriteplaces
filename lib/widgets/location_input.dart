@@ -156,6 +156,20 @@ class _LocationInputState extends State<LocationInput> {
             ),
           ],
         ),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          TextButton.icon(
+            onPressed: () {},
+            icon: const Icon(Icons.location_city),
+            label: const Text('Near By Places'),
+          ),
+          TextButton.icon(
+            onPressed: () {
+              _selectOnMap();
+            },
+            icon: const Icon(Icons.map_outlined),
+            label: const Text('Search Location'),
+          ),
+        ])
       ],
     );
   }
