@@ -7,6 +7,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:location/location.dart';
 
+import '../screens/Search_locations.dart';
+
 class LocationInput extends StatefulWidget {
   const LocationInput({super.key, required this.onSelectLocation});
   final void Function(PlaceLocation location) onSelectLocation;
@@ -164,7 +166,11 @@ class _LocationInputState extends State<LocationInput> {
           ),
           TextButton.icon(
             onPressed: () {
-              _selectOnMap();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (ctx) => const SearchLocations(),
+                ),
+              );
             },
             icon: const Icon(Icons.map_outlined),
             label: const Text('Search Location'),
